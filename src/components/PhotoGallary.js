@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./PhotoGallary.css";
+import gallaryImages from "../imageData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleChevronLeft,
@@ -7,12 +8,11 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const PhotoGallary = (props) => {
+const PhotoGallary = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [openModal, setOpenModal] = useState(false);
 
   const handleOpenModal = (index) => {
-    // console.log(index);
     setSlideNumber(index);
     setOpenModal(true);
   };
@@ -22,11 +22,11 @@ const PhotoGallary = (props) => {
   };
   const prevSlide = () => {
     slideNumber === 0
-      ? setSlideNumber(props.gallaryImages.length - 1)
+      ? setSlideNumber(gallaryImages.length - 1)
       : setSlideNumber(slideNumber - 1);
   };
   const nextSlide = () => {
-    slideNumber === props.gallaryImages.length - 1
+    slideNumber === gallaryImages.length - 1
       ? setSlideNumber(0)
       : setSlideNumber(slideNumber + 1);
   };
@@ -51,13 +51,13 @@ const PhotoGallary = (props) => {
             onClick={nextSlide}
           />
           <div className="fullScreenImage">
-            <img src={props.gallaryImages[slideNumber].img} alt="" />
+            <img src={gallaryImages[slideNumber].img} alt="" />
           </div>
         </div>
       )}
 
       <div className="gallaryWrap">
-        {props.gallaryImages.map((slide, index) => {
+        {gallaryImages.map((slide, index) => {
           return (
             <div
               className="single"
