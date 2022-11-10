@@ -60,11 +60,17 @@ const PhotoGallary = () => {
         {gallaryImages.map((slide, index) => {
           return (
             <div
-              className="single"
+              className="singlePhotoContainer"
               key={index}
               onClick={() => handleOpenModal(index)}
             >
-              <img src={slide.img} alt="" />
+              <div className="single">
+                <img src={slide.img} alt="" />
+                <p className="description">
+                  {slide.description} -{" "}
+                  <span className="date">{slide.date}</span>
+                </p>
+              </div>
             </div>
           );
         })}
