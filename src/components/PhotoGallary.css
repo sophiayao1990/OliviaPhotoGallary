@@ -17,6 +17,12 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 500px) {
+  .singlePhotoContainer {
+    width: 280px;
+  }
+}
+
 .singlePhotoContainer img {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -26,8 +32,9 @@
   /* height: 100%; */
 }
 .description {
+  font-family: "Caveat", cursive;
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 20px;
 }
 .date {

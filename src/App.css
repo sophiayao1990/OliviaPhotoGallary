@@ -11,6 +11,10 @@ body {
 .copyright {
   text-align: center;
   margin: 1em;
+  font-family: "Sono", sans-serif;
+}
+.title {
+  font-size: 35px;
 }
 
 .copyright {
